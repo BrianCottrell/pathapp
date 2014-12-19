@@ -277,7 +277,7 @@ function checkCompeteness(){
 			groupTotal.push(pathArray[i][2]);
 		}
 	}
-	if(pathArray.length >= groups){
+	if(pathArray.length >= groups+1){
 		document.getElementsByClassName('enter')[0].style.display = 'inline';
 	}else{
 		document.getElementsByClassName('enter')[0].style.display = 'none';
