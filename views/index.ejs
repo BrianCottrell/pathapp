@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <title>Pathfinding Challenge</title>
+    <link type='text.css' rel='stylesheet' href='style.css'>
+</head>
+<body>
+	<div class='title' id='title'>Pathfinding Challenge</div>
+    <div class='outer'>
+        <div class='map'></div>
+    </div>
+    <div class='login' id='login'>
+    	<% if(loggedIn){ %>
+    		<a href="/logout" class="user">Logout</a>
+        	<p>Username</p>
+        <% }else{ %>
+        	<a href="/login" class='user'>Login</a>
+        	<a href="/signup" class='user'>Signup</a>
+        <% } %>
+    </div>    
+    <div class='menu' id='menu'>
+    	<p class='distance'>Start your path</p>
+        <form action='/highscore' method='post'>
+	        <input type='hidden' name='path' class='distance'>
+	        <button type='submit' class='enter'>Enter Path</button>
+    	</form>
+    </div>
+    <div class='preferences' id='preferences'>
+        preferences<br>
+    	<div class='rounded'></div>
+    	<div class='squared'></div>
+    	<div class='bordered'></div>
+        <div class='green'></div>
+    </div>
+    <div class='highscore' id='highscore'>
+    	<p>
+    		High Scores:<br>
+    		<% for(var i = 0; i < scores.length; i++){ %>
+    			<%= scores[i].path %><br>
+    		<% } %>
+    	</p>
+    </div>
+    <script src='points.js'></script>
+    <script src='main.js'></script>
+</body>
+</html>
