@@ -1,10 +1,43 @@
 body{
 	text-align: center;
 	font-style: bold;
-	font-family: helvetica;
+	font-family: "Arial Black", Gadget, sans-serif;
+}
+.bluetext{
+	position: relative;
+	display: inline-block;
+	width: 30%;
+	padding: 15% 0%;
+	margin: 8%;
+	background-color: rgba(0,0,100,0.8);
+}
+.bordered{
+	position: relative;
+	display: inline-block;
+	width: 25%;
+	padding: 12.5% 0%;
+	margin: 8%;	
+	background-color: rgba(200,0,0,0.8);
+	border: 3px solid rgba(250,100,100,0.9);
+}
+.clear{
+	position: relative;
+	display: inline-block;
+	width: 30%;
+	padding: 15% 0%;
+	margin: 8%;	
+	background-color: rgba(255,255,255,0.8);
 }
 .enter{
 	display: none;
+}
+.green{
+	position: relative;
+	display: inline-block;
+	width: 30%;
+	padding: 15% 0%;
+	margin: 8%;	
+	background-color: rgba(100,250,100,0.8);
 }
 .highscore{
 	position: absolute;
@@ -54,7 +87,7 @@ body{
 .preferences{
 	position: absolute;
 	width: 8%;
-	height: 25%;
+	height: 32%;
 	padding: 0% 0%;
 	font-size: 10px;
 	border-radius: 10px;
@@ -76,29 +109,12 @@ body{
 	margin: 8%;	
 	background-color: rgba(250,0,0,0.8);
 }
-.bordered{
-	position: relative;
-	display: inline-block;
-	width: 25%;
-	padding: 15% 0%;
-	margin: 8%;	
-	background-color: rgba(200,0,0,0.8);
-	border: 3px solid rgba(250, 100, 100, 0.9);
-}
 .title{
 	position: absolute;	
-	width: 25%;
+	width: 30%;
 	padding-top: 1%;
 	padding-bottom: 1.5%;
-	font-size: 30px;
+	font-size: 25px;
 	border: 3px solid rgba(0,50,100,0.9);	
 	border-radius: 10px;
-}
-.green{
-	position: relative;
-	display: inline-block;
-	width: 30%;
-	padding: 15% 0%;
-	margin: 8%;	
-	background-color: rgba(100,250,100,0.8);
 }

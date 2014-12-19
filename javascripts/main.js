@@ -8,7 +8,7 @@ var saveColor,
 	dragX, dragY;
 var scale = 29.9484914796,
 	groups = 48,
-	highscoreX = '85%', highscoreY = '50%', highscoreColor = 'rgba(0,50,100,0.8)',
+	highscoreX = '80%', highscoreY = '30%', highscoreColor = 'rgba(0,50,100,0.8)',
 	loginX = '85%', loginY = '0%', loginColor = 'rgba(200,100,0,0.4)',
 	menuX = '2%', menuY = '30%', menuColor = 'rgba(0,200,50,0.6)',
 	preferencesX = '6%', preferencesY = '6%', preferencesColor = 'rgba(200,200,0,0.7)',
@@ -96,7 +96,7 @@ function selectPoint(){
 		drawLine(x1, y1, x2, y2);
 	}
 	if(distanceTotal){
-		document.getElementsByClassName('distance')[0].innerHTML = Math.round(distanceTotal);
+		document.getElementsByClassName('distance')[0].innerHTML = Math.round(distanceTotal)+' miles';
 		document.getElementsByClassName('distance')[1].value = Math.round(distanceTotal);
 	}
 	checkCompeteness();
@@ -169,24 +169,66 @@ function setIndex(){
 
 	if(localStorage.storeBorder){
 		var setBorder = JSON.parse(localStorage.storeBorder);
-		document.getElementsByClassName('highscore')[0].style.border = storeBorder;
-		document.getElementsByClassName('login')[0].style.border = storeBorder;
-		document.getElementsByClassName('menu')[0].style.border = storeBorder;
-		document.getElementsByClassName('preferences')[0].style.border = storeBorder;
-		document.getElementsByClassName('title')[0].style.border = storeBorder;
+		document.getElementsByClassName('highscore')[0].style.border = setBorder;
+		document.getElementsByClassName('login')[0].style.border = setBorder;
+		document.getElementsByClassName('menu')[0].style.border = setBorder;
+		document.getElementsByClassName('preferences')[0].style.border = setBorder;
+		document.getElementsByClassName('title')[0].style.border = setBorder;
 	}
 
-	document.getElementsByClassName('green')[0].addEventListener('click', storeGreen);
+	if(localStorage.storeRadius){
+		var setRadius = JSON.parse(localStorage.storeRadius);
+		document.getElementsByClassName('highscore')[0].style.borderRadius = setRadius;
+		document.getElementsByClassName('login')[0].style.borderRadius = setRadius;
+		document.getElementsByClassName('menu')[0].style.borderRadius = setRadius;
+		document.getElementsByClassName('preferences')[0].style.borderRadius = setRadius;
+		document.getElementsByClassName('title')[0].style.borderRadius = setRadius;
+	}
+
+	if(localStorage.storeText){
+		var setText = JSON.parse(localStorage.storeText);
+		document.getElementsByClassName('highscore')[0].style.color = setText;
+		document.getElementsByClassName('login')[0].style.color = setText;
+		document.getElementsByClassName('menu')[0].style.color = setText;
+		document.getElementsByClassName('preferences')[0].style.color = setText;
+		document.getElementsByClassName('title')[0].style.color = setText;
+	}
+
+	document.getElementsByClassName('green')[0].addEventListener('click', storeColor);
 	document.getElementsByClassName('bordered')[0].addEventListener('click', storeBorder);
+	document.getElementsByClassName('rounded')[0].addEventListener('click', storeRounded);
+	document.getElementsByClassName('squared')[0].addEventListener('click', storeSquared);
+	document.getElementsByClassName('bluetext')[0].addEventListener('click', storeText);
+	document.getElementsByClassName('clear')[0].addEventListener('click', clearStorage);
 }
 
-function storeGreen(){
+function storeColor(){
 	localStorage.storeColor = JSON.stringify('rgba(0,250,0,0.75)');
 	setIndex();
 }
 
+function storeText(){
+	localStorage.storeText = JSON.stringify('rgba(150,150,250,1)');
+	setIndex();
+}
+
 function storeBorder(){
-	localStorage.storeBorder = JSON.stringify('2px solid rgba(150,150,250,0.85)');
+	localStorage.storeBorder = JSON.stringify('4px solid rgba(150,150,250,0.85)');
+	setIndex();
+}
+
+function storeRounded(){
+	localStorage.storeRadius = JSON.stringify('10px');
+	setIndex();
+}
+
+function storeSquared(){
+	localStorage.storeRadius = JSON.stringify('0px');
+	setIndex();
+}
+
+function clearStorage(){
+	localStorage.clear();
 	setIndex();
 }
 

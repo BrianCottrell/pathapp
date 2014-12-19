@@ -22,14 +22,14 @@ module.exports = function(app, passport) {
     });
     //Gets called when a user logs in
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile',
+        successRedirect : '/',
         failureRedirect : '/login',
         failureFlash : true
     }));
     /*SIGNUP*/
     //Gets Called when a user signs up
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile',
+        successRedirect : '/',
         failureRedirect : '/signup',
         failureFlash : true
     }));
