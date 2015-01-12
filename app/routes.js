@@ -58,7 +58,7 @@ module.exports = function(app, passport) {
         score.path = req.body.path;
         score.save(function(error){
             if(error) console.log(error);
-            res.status(201).json({message: 'planet seuccessfully created'});
+            res.status(201).json({message: 'path seuccessfully created'});
         });
         res.redirect('/');
     });
