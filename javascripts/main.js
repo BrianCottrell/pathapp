@@ -235,6 +235,7 @@ function setIndex(){
 		document.getElementsByClassName('preferences')[0].style.color = setText;
 		document.getElementsByClassName('title')[0].style.color = setText;
 	}
+	document.getElementsByTagName('body')[0].style.visibility = 'visible';
 	//Add event listeners to each preferences menu element
 	document.getElementsByClassName('green')[0].addEventListener('click', storeColor);
 	document.getElementsByClassName('bordered')[0].addEventListener('click', storeBorder);

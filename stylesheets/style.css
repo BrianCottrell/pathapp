@@ -3,6 +3,7 @@
 /* 12-18-2014      		                   */
 
 body{
+	visibility: hidden;
 	text-align: center;
 	font-style: bold;
 	font-family: "Arial Black", Gadget, sans-serif;
